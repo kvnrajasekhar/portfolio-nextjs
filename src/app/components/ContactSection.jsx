@@ -27,7 +27,7 @@ const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative"
+      className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative z-[0]"
     >
       <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#ff9500] to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
       <div className="z-10">
@@ -35,7 +35,7 @@ const ContactSection = () => {
           Let&apos;s Connect
         </h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
-          I'm always open to connecting with like-minded professionals, enthusiasts, and potential collaborators.
+          I&apos;m always open to connecting with like-minded professionals, enthusiasts, and potential collaborators.
           If you share an interest in web development, DevOps, or simply want to exchange ideas, feel free to reach out!.
         </p>
         <div className="socials flex flex-row gap-2">

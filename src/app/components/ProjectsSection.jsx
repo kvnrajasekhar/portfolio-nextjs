@@ -23,17 +23,9 @@ const projectsData = [
     gitUrl: "https://github.com/kvnrajasekhar/fashionsite",
     previewUrl: "https://kvnrajasekhar.github.io/fashionsite",
   },
+
   {
     id: 3,
-    title: "Caluculator Application",
-    description: "Caluclator Web Appliaction that performs basic caluculation funtions.",
-    image: "/images/projects/3.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/kvnrajasekhar/calculator",
-    previewUrl: "https://kvnrajasekhar.github.io/calculator" ,
-  },
-  {
-    id: 4,
     title: "Home Automation Learning Kit",
     description: "IoT based smart automaion learning kit whuch is used for home automation.",
     image: "/images/projects/4.png",

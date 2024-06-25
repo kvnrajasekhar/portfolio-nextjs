@@ -68,9 +68,9 @@ const MainSection = () => {
             <Image
               src="/images/main-b and w.png"
               alt="hero image"
-              className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              width={300}
-              height={300}
+              className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 lg:h-[400px] lg:w-[300px]"
+              width={200}
+              height={200}
             />
           </div>
         </motion.div>
