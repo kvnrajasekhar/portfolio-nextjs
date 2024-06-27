@@ -17,8 +17,8 @@ const ContactSection = () => {
 
     const mailtoURL = `https://mail.google.com/mail/?view=cm&fs=1&to=kanagalavnrajasekhar@gmail.com&su=${subject}&body=${message}`;
 
-    // Open the mailto URL in a new tab
-    window.open(mailtoURL, '_blank');
+    // Open the mailto URL 
+    window.location.href = mailtoURL;
 
     setEmailSubmitted(true);
     e.preventDefault();
