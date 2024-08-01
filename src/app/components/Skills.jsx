@@ -1,14 +1,17 @@
-"use client"
+"use client";
 
 import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'animate.css/animate.min.css';
 import WOW from 'wowjs';
 
-
 const Skills = () => {
     useEffect(() => {
-        new WOW.WOW().init();
+        const wow = new WOW.WOW();
+        wow.init();
+        return () => {
+            wow.sync(); // Clean up to ensure wow.js doesn't affect other components
+        };
     }, []);
 
     const showHiddenCard = (id) => {
@@ -22,8 +25,7 @@ const Skills = () => {
     return (
         <div className="flex flex-wrap justify-between mx-8 lg:mx-16 text-white" id="skills">
             <div className="w-full wow fadeInUp" data-wow-delay="0.1s">
-                <h1 className="text-4xl font-bold">Skills</h1>
-                {/* <h3 className="mb-4 text-2xl">My Skills</h3> */}
+                <h1 className="text-4xl font-bold mb-8">Skills</h1>
                 <div className="flex flex-wrap">
                     {/* Column 1 */}
                     <div className="w-full md:w-1/3 p-4">
@@ -34,7 +36,7 @@ const Skills = () => {
                                 <h6 className="font-bold">90%</h6>
                             </div>
                             <progress
-                                className="bg-[#ff9100] rounded cursor-pointer transition-all duration-300 ease-in-out"
+                                className="bg-[#ff9100] rounded-md cursor-pointer transition-all duration-300 ease-in-out w-full"
                                 style={{ width: '90%' }}
                                 aria-valuenow="90"
                                 aria-valuemin="0"
@@ -42,8 +44,8 @@ const Skills = () => {
                                 onMouseOver={() => showHiddenCard('html')}
                                 onMouseOut={() => hideHiddenCard('html')}
                             ></progress>
-                            <div 
-                                className="absolute bg-[#ff9100] text-black p-2 w-[400px] z-10 rounded-lg shadow-md hidden"
+                            <div
+                                className="absolute bg-[#ff9100] text-black p-2 w-full md:w-[400px] z-10 rounded-lg shadow-md hidden "
                                 id="html-hidden-card"
                             >
                                 <h6 className="text-center">HTML</h6>
@@ -55,15 +57,15 @@ const Skills = () => {
                                 </ul>
                             </div>
                         </div>
-                        
+
                         {/* Skill 2: CSS */}
                         <div className="relative mb-4">
                             <div className="flex justify-between">
                                 <h6 className="font-bold">CSS</h6>
                                 <h6 className="font-bold">85%</h6>
                             </div>
-                            <progress 
-                                className="bg-[#ff9100] rounded-md cursor-pointer transition-all duration-300 ease-in-out"
+                            <progress
+                                className="bg-[#ff9100] rounded-md cursor-pointer transition-all duration-300 ease-in-out w-full"
                                 style={{ width: '85%' }}
                                 aria-valuenow="85"
                                 aria-valuemin="0"
@@ -71,8 +73,8 @@ const Skills = () => {
                                 onMouseOver={() => showHiddenCard('css')}
                                 onMouseOut={() => hideHiddenCard('css')}
                             ></progress>
-                            <div 
-                                className="absolute bg-[#ff9100] text-black p-2 w-[400px] z-10 rounded-lg shadow-md hidden"
+                            <div
+                                className="absolute bg-[#ff9100] text-black p-2 w-full md:w-[400px] z-10 rounded-lg shadow-md hidden "
                                 id="css-hidden-card"
                             >
                                 <h6 className="text-center">CSS</h6>
@@ -91,8 +93,8 @@ const Skills = () => {
                                 <h6 className="font-bold">Python</h6>
                                 <h6 className="font-bold">80%</h6>
                             </div>
-                            <progress 
-                                className="bg-[#ff9100] rounded-md cursor-pointer transition-all duration-300 ease-in-out z-1"
+                            <progress
+                                className="bg-[#ff9100] rounded-md cursor-pointer transition-all duration-300 ease-in-out w-full"
                                 style={{ width: '80%' }}
                                 aria-valuenow="80"
                                 aria-valuemin="0"
@@ -100,8 +102,8 @@ const Skills = () => {
                                 onMouseOver={() => showHiddenCard('python')}
                                 onMouseOut={() => hideHiddenCard('python')}
                             ></progress>
-                            <div 
-                                className="absolute bg-[#ff9100] text-black p-2 w-[400px] z-10 rounded-lg shadow-md hidden"
+                            <div
+                                className="absolute bg-[#ff9100] text-black p-2 w-full md:w-[400px] z-10 rounded-lg shadow-md hidden"
                                 id="python-hidden-card"
                             >
                                 <h6 className="text-center">Python</h6>
@@ -121,8 +123,8 @@ const Skills = () => {
                                 <h6 className="font-bold">JavaScript</h6>
                                 <h6 className="font-bold">75%</h6>
                             </div>
-                            <progress 
-                                className="bg-[#ff9100] rounded-md cursor-pointer transition-all duration-300 ease-in-out "
+                            <progress
+                                className="bg-[#ff9100] rounded-md cursor-pointer transition-all duration-300 ease-in-out w-full"
                                 style={{ width: '75%' }}
                                 aria-valuenow="75"
                                 aria-valuemin="0"
@@ -130,8 +132,8 @@ const Skills = () => {
                                 onMouseOver={() => showHiddenCard('javascript')}
                                 onMouseOut={() => hideHiddenCard('javascript')}
                             ></progress>
-                            <div 
-                                className="absolute bg-[#ff9100] text-black p-2 w-[400px] z-10 rounded-lg shadow-md hidden"
+                            <div
+                                className="absolute bg-[#ff9100] text-black p-2 w-full md:w-[400px] z-10 rounded-lg shadow-md hidden "
                                 id="javascript-hidden-card"
                             >
                                 <h6 className="text-center">JavaScript</h6>
@@ -143,15 +145,15 @@ const Skills = () => {
                                 </ul>
                             </div>
                         </div>
-                        
+
                         {/* Skill 5: React JS */}
                         <div className="relative mb-4">
                             <div className="flex justify-between">
                                 <h6 className="font-bold">React JS</h6>
                                 <h6 className="font-bold">80%</h6>
                             </div>
-                            <progress 
-                                className="bg-[#ff9100] rounded-md cursor-pointer transition-all duration-300 ease-in-out"
+                            <progress
+                                className="bg-[#ff9100] rounded-md cursor-pointer transition-all duration-300 ease-in-out w-full"
                                 style={{ width: '80%' }}
                                 aria-valuenow="80"
                                 aria-valuemin="0"
@@ -159,8 +161,8 @@ const Skills = () => {
                                 onMouseOver={() => showHiddenCard('reactjs')}
                                 onMouseOut={() => hideHiddenCard('reactjs')}
                             ></progress>
-                            <div 
-                                className="absolute bg-[#ff9100] text-black p-2 w-[400px] z-10 rounded-lg shadow-md hidden"
+                            <div
+                                className="absolute bg-[#ff9100] text-black p-2 w-full md:w-[400px] z-10 rounded-lg shadow-md hidden"
                                 id="reactjs-hidden-card"
                             >
                                 <h6 className="text-center">React JS</h6>
@@ -179,8 +181,8 @@ const Skills = () => {
                                 <h6 className="font-bold">ExpressJS</h6>
                                 <h6 className="font-bold">70%</h6>
                             </div>
-                            <progress 
-                                className="bg-[#ff9100] rounded-md cursor-pointer transition-all duration-300 ease-in-out"
+                            <progress
+                                className="bg-[#ff9100] rounded-md cursor-pointer transition-all duration-300 ease-in-out w-full"
                                 style={{ width: '70%' }}
                                 aria-valuenow="70"
                                 aria-valuemin="0"
@@ -188,8 +190,8 @@ const Skills = () => {
                                 onMouseOver={() => showHiddenCard('expressjs')}
                                 onMouseOut={() => hideHiddenCard('expressjs')}
                             ></progress>
-                            <div 
-                                className="absolute bg-[#ff9100] text-black p-2 w-[400px] z-10 rounded-lg shadow-md hidden"
+                            <div
+                                className="absolute bg-[#ff9100] text-black p-2 w-full md:w-[400px] z-10 rounded-lg shadow-md hidden"
                                 id="expressjs-hidden-card"
                             >
                                 <h6 className="text-center">ExpressJS</h6>
@@ -212,7 +214,7 @@ const Skills = () => {
                                 <h6 className="font-bold">70%</h6>
                             </div>
                             <progress
-                                className="bg-[#ff9100] rounded-md cursor-pointer transition-all duration-300 ease-in-out"
+                                className="bg-[#ff9100]  rounded-md cursor-pointer transition-all duration-300 ease-in-out w-full"
                                 style={{ width: '70%' }}
                                 aria-valuenow="70"
                                 aria-valuemin="0"
@@ -220,8 +222,8 @@ const Skills = () => {
                                 onMouseOver={() => showHiddenCard('nodejs')}
                                 onMouseOut={() => hideHiddenCard('nodejs')}
                             ></progress>
-                            <div 
-                                className="absolute bg-[#ff9100] text-black p-2 w-[400px] z-10 rounded-lg shadow-md hidden"
+                            <div
+                                className="absolute bg-[#ff9100] text-black p-2 w-full md:w-[400px] md:-translate-x-40 lg:translate-x-0 z-10 rounded-lg shadow-md hidden"
                                 id="nodejs-hidden-card"
                             >
                                 <h6 className="text-center">NodeJS</h6>
@@ -241,7 +243,7 @@ const Skills = () => {
                                 <h6 className="font-bold">65%</h6>
                             </div>
                             <progress
-                                className="bg-[#ff9100] rounded-md cursor-pointer transition-all duration-300 ease-in-out"
+                                className="bg-[#ff9100] rounded-md cursor-pointer transition-all duration-300 ease-in-out w-full"
                                 style={{ width: '65%' }}
                                 aria-valuenow="65"
                                 aria-valuemin="0"
@@ -249,8 +251,8 @@ const Skills = () => {
                                 onMouseOver={() => showHiddenCard('mongodb')}
                                 onMouseOut={() => hideHiddenCard('mongodb')}
                             ></progress>
-                            <div 
-                                className="absolute bg-[#ff9100] text-white-200 p-2 w-[400px] z-10 rounded-lg shadow-md hidden"
+                            <div
+                                className="absolute bg-[#ff9100] text-black p-2 w-full md:w-[400px] md:-translate-x-40 lg:translate-x-0 z-10 rounded-lg shadow-md hidden "
                                 id="mongodb-hidden-card"
                             >
                                 <h6 className="text-center">MongoDB</h6>
@@ -259,6 +261,34 @@ const Skills = () => {
                                     <li className="mb-1">Proficient in creating and managing collections and documents.</li>
                                     <li className="mb-1">Knowledge of MongoDB aggregation framework and indexing strategies.</li>
                                     <li className="mb-1">Experience in integrating MongoDB with Node.js applications.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div className="relative mb-4">
+                            <div className="flex justify-between">
+                                <h6 className="font-bold">REST API</h6>
+                                <h6 className="font-bold">60%</h6>
+                            </div>
+                            <progress
+                                className="bg-[#ff9100] rounded-md cursor-pointer transition-all duration-300 ease-in-out w-full"
+                                style={{ width: '60%' }}
+                                aria-valuenow="60"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                                onMouseOver={() => showHiddenCard('restapi')}
+                                onMouseOut={() => hideHiddenCard('restapi')}
+                            ></progress>
+                            <div
+                                className="absolute bg-[#ff9100] text-black p-2 w-full  md:w-[400px]  md:-translate-x-40 lg:translate-x-0 z-10 rounded-lg shadow-md hidden "
+                                id="restapi-hidden-card"
+                            >
+                                <h6 className="text-center">REST API</h6>
+                                <ul className="list-disc pl-5">
+                                    <li className="mb-1">Experience in designing and implementing RESTful APIs.</li>
+                                    <li className="mb-1">Proficient in HTTP methods, status codes, and API authentication.</li>
+                                    <li className="mb-1">Knowledge of API documentation using tools like Postman.</li>
+                                    <li className="mb-1">Experience in consuming and testing RESTful APIs from frontend applications.</li>
                                 </ul>
                             </div>
                         </div>
