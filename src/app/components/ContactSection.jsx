@@ -35,7 +35,7 @@ const ContactSection = () => {
           Let&apos;s Connect
         </h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
-          I'm always open to connecting with like-minded professionals, enthusiasts, and potential collaborators.
+          I am always open to connecting with like-minded professionals, enthusiasts, and potential collaborators.
           If you share an interest in web development, DevOps, or simply want to exchange ideas, feel free to reach out!.
         </p>
         <div className="socials flex flex-row gap-2">
@@ -50,7 +50,7 @@ const ContactSection = () => {
       <div>
         {emailSubmitted ? (
           <p className="text-green-500 text-sm mt-2">
-            Mail sent successfully!...
+            Mail sent successfully&#x21;...
           </p>
         ) : (
           <form className="flex flex-col" onSubmit={handleSubmit}>
